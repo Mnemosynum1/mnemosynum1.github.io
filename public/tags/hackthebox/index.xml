@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HackTheBox on </title>
+    <link>//localhost:1313/tags/hackthebox/</link>
+    <description>Recent content in HackTheBox on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Sep 2024 16:06:52 +0200</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write-Up HTB Challenge Simple Encryptor</title>
+      <link>//localhost:1313/posts/2024/wu_simple_encryptor/</link>
+      <pubDate>Tue, 24 Sep 2024 16:06:52 +0200</pubDate>
+      <guid>//localhost:1313/posts/2024/wu_simple_encryptor/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

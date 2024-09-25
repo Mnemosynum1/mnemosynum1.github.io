@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script defer language="javascript" type="text/javascript" src="/js/bundle.min.36e9304391cffd99a9724b05b48cc05e0351d83a6e55b55e90b30d58a80212a8.js"></script>
+
+
+
+
+
+
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href=/favicon.png>
+
+    
+    
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+<!-- Open Graph image and Twitter Card metadata -->
+
+<title itemprop="name">Lucas Giordani - Write-Up FCSC2019 Not So Fat</title>
+<meta property="og:title" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;FCSC2019&#32;Not&#32;So&#32;Fat />
+<meta name="twitter:title" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;FCSC2019&#32;Not&#32;So&#32;Fat />
+<meta itemprop="name" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;FCSC2019&#32;Not&#32;So&#32;Fat />
+<meta name="application-name" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;FCSC2019&#32;Not&#32;So&#32;Fat />
+<meta property="og:site_name" content="" />
+
+
+<meta name="description" content="" />
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+
+<base href="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/" />
+<link rel="canonical" href="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/" itemprop="url" />
+<meta name="url" content="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/" />
+<meta name="twitter:url" content="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/" />
+<meta property="og:url" content="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/" />
+
+
+<meta property="og:updated_time" content="2024-09-24T22:18:47&#43;02:00" />
+
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href='//localhost:1313/sitemap.xml' />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+
+<meta property="fb:admins" content="" />
+
+
+<meta name="apple-mobile-web-app-title" content="" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.134.3">
+
+
+    
+    
+
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.94a339836f89f0d25f31980cb6b0631da21e20af128308747ce44e0525eb16ef.css">
+
+
+    
+    <style>
+    body {
+        --sidebar-bg-color: #202020;
+        --sidebar-img-border-color: #515151;
+        --sidebar-p-color: #909090;
+        --sidebar-h1-color: #FFF;
+        --sidebar-a-color: #FFF;
+        --sidebar-socials-color: #FFF;
+        --text-color: #222;
+        --bkg-color: #FAF9F6;
+        --post-title-color: #303030;
+        --list-color: #5a5a5a;
+        --link-color: #268bd2;
+        --date-color: #515151;
+        --table-border-color: #E5E5E5;
+        --table-stripe-color: #F9F9F9;
+        --code-color: #000;
+        --code-background-color: #E5E5E5;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+        --moon-sun-color: #FFF;
+        --moon-sun-background-color: #515151;
+    }
+    body.dark-theme {
+        --text-color: #eee;
+        --bkg-color: #121212;
+        --post-title-color: #DBE2E9;
+        --list-color: #9d9d9d;
+        --link-color: #268bd2;
+        --date-color: #9a9a9a;
+        --table-border-color: #515151;
+        --table-stripe-color: #202020;
+        --code-color: #fff;
+        --code-background-color: #515151;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+    }
+    body {
+        background-color: var(--bkg-color);
+    }
+</style>
+
+</head>
+
+    <body class="">
+        <div class="wrapper">
+            <aside class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="light-dark" align="right">
+    <button class="btn-light-dark" title="Toggle light/dark mode">
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858a7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277c.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316a.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+    </button>
+</div>
+
+        <div class="sidebar-about">
+    <h1 class="brand">
+        
+            <a href="//localhost:1313/">
+                <img src="/images/Holbein_Danse_Macabre.jpg" alt="brand image">
+            </a>
+        
+        
+            <a href="//localhost:1313/">
+                <h1>Lucas Giordani</h1>
+            </a>
+        
+    </h1>
+    <p class="lead">
+    A personal blog about my research and work in cybersecurity/computing.
+    </p>
+</div>
+
+        <nav>
+    <ul class="sidebar-nav">
+
+        
+        
+        
+        
+            
+
+            
+                
+                
+                    <li class="heading">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                
+            
+                
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+
+            
+                
+                
+            
+                
+                
+                    <li class="heading">
+                        <a href="/posts/">Posts</a>
+                    </li>
+                    
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+            <li class="heading">
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </li>
+            
+
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+
+    </ul>
+</nav>
+
+        
+
+
+    <a target="_blank" class="social" title="LinkedIn" href="https://www.linkedin.com/in/lucas-giordani-52027b237/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a target="_blank" class="social" title="Email" href="mailto://lucasgiordani.pro@gmail.com">
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
+            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
+       </svg>
+    </a>
+
+
+
+
+        <p class="footnote">
+powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
+    <br>
+    &copy; 2024 . All rights reserved.
+</p>
+
+  </div>
+</aside>
+
+            <main class="content container" >
+                <div class="post">
+  <div class="info">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/">Write-Up FCSC2019 Not So Fat</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2024-09-24T22:18:47&#43;0200" class="post-date">
+        September 24, 2024
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-FCSC2019">
+        <a href="//localhost:1313/tags/fcsc2019">FCSC2019</a>
+      </li>
+      
+      <li class="tag-WriteUp">
+        <a href="//localhost:1313/tags/writeup">WriteUp</a>
+      </li>
+      
+      <li class="tag-Forensic">
+        <a href="//localhost:1313/tags/forensic">Forensic</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+  <ul>
+<li>Capture the flag: FSCS2019</li>
+<li>Categories: Forensic</li>
+<li>Title: Not so FAT</li>
+<li>Difficulty: intro</li>
+<li>Author: alx</li>
+<li>Description: <code>I have deleted the flag by mistake: could you recover it for me?</code></li>
+<li><a href="https://hackropole.fr/en/challenges/forensics/fcsc2019-forensics-not-so-fat/" target="_blank">Link</a></li>
+</ul>
+<p>We start with a file named <code>not-so-fat.dd</code>. Using the command <code>file</code> we can determine the format:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ file not-so-fat.dd 
+</span></span><span style="display:flex;"><span>not-so-fat.dd: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID <span style="color:#e6db74">&#34;mkfs.fat&#34;</span>, sectors/cluster 4, reserved sectors 4, root entries 512, sectors <span style="color:#ae81ff">32768</span> <span style="color:#f92672">(</span>volumes &lt;<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span> MB<span style="color:#f92672">)</span>, Media descriptor 0xf8, sectors/FAT 32, sectors/track 32, heads 64, serial number 0x3be84c04, unlabeled, FAT <span style="color:#f92672">(</span><span style="color:#ae81ff">16</span> bit<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>This file is a disk image with a DOS/MBR boot sector and formatted as a FAT16 file system. We can mount this disk image with <code>mount</code> in read-only to avoid compromising file integrity.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir mnt_not_so_fat
+</span></span><span style="display:flex;"><span>$ sudo mount -t vfat -o ro not_so_fat.dd mnt_not_so_fat
+</span></span><span style="display:flex;"><span>$ ls -lha mnt_not_so_fat
+</span></span><span style="display:flex;"><span>total 16K
+</span></span><span style="display:flex;"><span>drwxr-xr-x. <span style="color:#ae81ff">2</span> root  root  16K  <span style="color:#ae81ff">1</span> janv.  <span style="color:#ae81ff">1970</span> .
+</span></span><span style="display:flex;"><span>drwxr-xr-x. <span style="color:#ae81ff">1</span> lucas lucas <span style="color:#ae81ff">156</span> <span style="color:#ae81ff">24</span> sept. 19:58 ..
+</span></span></code></pre></div><p>The disk appears to be empty but if we check strings, there is file called <code>flag.txt</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ strings not-so-fat.dd 
+</span></span><span style="display:flex;"><span>mkfs.fat
+</span></span><span style="display:flex;"><span>;NO NAME    FAT16   
+</span></span><span style="display:flex;"><span>This is not a bootable disk.  Please insert a bootable floppy and
+</span></span><span style="display:flex;"><span>press any key to try again ... 
+</span></span><span style="display:flex;"><span>IEUYRJW    
+</span></span><span style="display:flex;"><span>LAG    ZIP 
+</span></span><span style="display:flex;"><span>flag.txtUT
+</span></span><span style="display:flex;"><span>flag.txtUT
+</span></span></code></pre></div><p>This file appears to be deleted as mention in the description. However,  We can recover this file using some appropriate tools. This process is known as <a href="https://en.wikipedia.org/wiki/File_carving" target="_blank">file carving</a>. On Linux-based operating systems there are tools to perform this operation, such as Autopsy, Foremost or Photorec. Personally, I used this last one to carry out this challenge.</p>
+<p>With this, we an encrypted zip file. So using <code>john</code> and <code>zip2john</code> we can try to crack it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ zip2john recup_dir.1/f0000104_flag.zip &gt; hash.john
+</span></span><span style="display:flex;"><span>$ john --wordlist<span style="color:#f92672">=</span>/usr/share/wordlists/rockyou.txt hash.john 
+</span></span><span style="display:flex;"><span>Using default input encoding: UTF-8
+</span></span><span style="display:flex;"><span>Loaded <span style="color:#ae81ff">1</span> password hash <span style="color:#f92672">(</span>PKZIP <span style="color:#f92672">[</span>32/64<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>Will run <span style="color:#ae81ff">4</span> OpenMP threads
+</span></span><span style="display:flex;"><span>Note: Passwords longer than <span style="color:#ae81ff">21</span> <span style="color:#f92672">[</span>worst <span style="color:#66d9ef">case</span> UTF-8<span style="color:#f92672">]</span> to <span style="color:#ae81ff">63</span> <span style="color:#f92672">[</span>ASCII<span style="color:#f92672">]</span> rejected
+</span></span><span style="display:flex;"><span>Press <span style="color:#e6db74">&#39;q&#39;</span> or Ctrl-C to abort, <span style="color:#e6db74">&#39;h&#39;</span> <span style="color:#66d9ef">for</span> help, almost any other key <span style="color:#66d9ef">for</span> status
+</span></span><span style="display:flex;"><span>password         <span style="color:#f92672">(</span>f0000104_flag.zip/flag.txt<span style="color:#f92672">)</span>     
+</span></span><span style="display:flex;"><span>1g 0:00:00:00 DONE <span style="color:#f92672">(</span>2024-09-24 19:45<span style="color:#f92672">)</span> 33.33g/s 273066p/s 273066c/s 273066C/s 123456..total90
+</span></span><span style="display:flex;"><span>Use the <span style="color:#e6db74">&#34;--show&#34;</span> option to display all of the cracked passwords reliably
+</span></span><span style="display:flex;"><span>Session completed. 
+</span></span></code></pre></div><p>Okay I should have known :&rsquo;). Using this password we get the flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ unzip -P password recup_dir.1/f0000104_flag.zip 
+</span></span><span style="display:flex;"><span>Archive:  recup_dir.1/f0000104_flag.zip
+</span></span><span style="display:flex;"><span> extracting: flag.txt 
+</span></span><span style="display:flex;"><span>$ cat flag.txt
+</span></span><span style="display:flex;"><span>ECSC<span style="color:#f92672">{</span>eefea8cda693390c7ce0f6da6e388089dd615379<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Easy-Peasy.</p>
+
+  
+  <hr>
+<div class="footer">
+    
+	    
+            <a class="previous-post" href="//localhost:1313/posts/2024/wu_simple_encryptor/?ref=footer"><span style="font-weight:bold;">« Previous</span><br>Write-Up HTB Challenge Simple Encryptor</a>
+        
+	    
+    
+</div>
+
+  
+</div>
+            </main>
+            
+  
+
+        </div>
+    </body>
+</html>

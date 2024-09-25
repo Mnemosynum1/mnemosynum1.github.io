@@ -1,0 +1,25 @@
+baseURL = "/"
+languageCode = "en-us"
+theme = "poison"
+paginate = 10
+pluralizelisttitles = false 
+
+[params]
+    hideToc = true
+    brand = "Lucas Giordani"                      # name of your site - appears in the sidebar
+    # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
+    brand_image = "/images/Holbein_Danse_Macabre.jpg"    # path to the image shown in the sidebar
+    description = "A personal blog about my research and work in cybersecurity/computing." # Used as default meta description if not specified in front matter
+    
+    menu = [
+        {Name = "About", URL = "/about/", HasChildren = false},
+        {Name = "Posts", URL = "/posts/", Pre = "Recent"},
+        {Name = "CV", URL = "/cv.pdf", HasChildren = false, PDF = true},
+    ]
+    linkedin_url = "https://www.linkedin.com/in/lucas-giordani-52027b237/"
+    email_url = "mailto://lucasgiordani.pro@gmail.com"
+
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'

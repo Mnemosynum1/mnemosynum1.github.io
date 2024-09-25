@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script defer language="javascript" type="text/javascript" src="/js/bundle.min.36e9304391cffd99a9724b05b48cc05e0351d83a6e55b55e90b30d58a80212a8.js"></script>
+
+
+
+
+
+
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href=/favicon.png>
+
+    
+    
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+<!-- Open Graph image and Twitter Card metadata -->
+
+<title itemprop="name">Lucas Giordani - Write-Up HTB Challenge Simple Encryptor</title>
+<meta property="og:title" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;HTB&#32;Challenge&#32;Simple&#32;Encryptor />
+<meta name="twitter:title" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;HTB&#32;Challenge&#32;Simple&#32;Encryptor />
+<meta itemprop="name" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;HTB&#32;Challenge&#32;Simple&#32;Encryptor />
+<meta name="application-name" content=Lucas&#32;Giordani&#32;-&#32;Write-Up&#32;HTB&#32;Challenge&#32;Simple&#32;Encryptor />
+<meta property="og:site_name" content="" />
+
+
+<meta name="description" content="" />
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+
+<base href="//localhost:1313/posts/2024/wu_simple_encryptor/" />
+<link rel="canonical" href="//localhost:1313/posts/2024/wu_simple_encryptor/" itemprop="url" />
+<meta name="url" content="//localhost:1313/posts/2024/wu_simple_encryptor/" />
+<meta name="twitter:url" content="//localhost:1313/posts/2024/wu_simple_encryptor/" />
+<meta property="og:url" content="//localhost:1313/posts/2024/wu_simple_encryptor/" />
+
+
+<meta property="og:updated_time" content="2024-09-24T16:06:52&#43;02:00" />
+
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href='//localhost:1313/sitemap.xml' />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+
+<meta property="fb:admins" content="" />
+
+
+<meta name="apple-mobile-web-app-title" content="" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.134.3">
+
+
+    
+    
+
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.94a339836f89f0d25f31980cb6b0631da21e20af128308747ce44e0525eb16ef.css">
+
+
+    
+    <style>
+    body {
+        --sidebar-bg-color: #202020;
+        --sidebar-img-border-color: #515151;
+        --sidebar-p-color: #909090;
+        --sidebar-h1-color: #FFF;
+        --sidebar-a-color: #FFF;
+        --sidebar-socials-color: #FFF;
+        --text-color: #222;
+        --bkg-color: #FAF9F6;
+        --post-title-color: #303030;
+        --list-color: #5a5a5a;
+        --link-color: #268bd2;
+        --date-color: #515151;
+        --table-border-color: #E5E5E5;
+        --table-stripe-color: #F9F9F9;
+        --code-color: #000;
+        --code-background-color: #E5E5E5;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+        --moon-sun-color: #FFF;
+        --moon-sun-background-color: #515151;
+    }
+    body.dark-theme {
+        --text-color: #eee;
+        --bkg-color: #121212;
+        --post-title-color: #DBE2E9;
+        --list-color: #9d9d9d;
+        --link-color: #268bd2;
+        --date-color: #9a9a9a;
+        --table-border-color: #515151;
+        --table-stripe-color: #202020;
+        --code-color: #fff;
+        --code-background-color: #515151;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+    }
+    body {
+        background-color: var(--bkg-color);
+    }
+</style>
+
+</head>
+
+    <body class="">
+        <div class="wrapper">
+            <aside class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="light-dark" align="right">
+    <button class="btn-light-dark" title="Toggle light/dark mode">
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858a7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277c.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316a.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+    </button>
+</div>
+
+        <div class="sidebar-about">
+    <h1 class="brand">
+        
+            <a href="//localhost:1313/">
+                <img src="/images/Holbein_Danse_Macabre.jpg" alt="brand image">
+            </a>
+        
+        
+            <a href="//localhost:1313/">
+                <h1>Lucas Giordani</h1>
+            </a>
+        
+    </h1>
+    <p class="lead">
+    A personal blog about my research and work in cybersecurity/computing.
+    </p>
+</div>
+
+        <nav>
+    <ul class="sidebar-nav">
+
+        
+        
+        
+        
+            
+
+            
+                
+                
+                    <li class="heading">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                
+            
+                
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+
+            
+                
+                
+            
+                
+                
+                    <li class="heading">
+                        <a href="/posts/">Posts</a>
+                    </li>
+                    
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+        
+            
+            <li class="heading">
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </li>
+            
+
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                        
+                
+            
+                
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+            
+        
+
+    </ul>
+</nav>
+
+        
+
+
+    <a target="_blank" class="social" title="LinkedIn" href="https://www.linkedin.com/in/lucas-giordani-52027b237/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a target="_blank" class="social" title="Email" href="mailto://lucasgiordani.pro@gmail.com">
+       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 485.211 485.211">
+            <path fill="currentColor" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/>
+       </svg>
+    </a>
+
+
+
+
+        <p class="footnote">
+powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
+    <br>
+    &copy; 2024 . All rights reserved.
+</p>
+
+  </div>
+</aside>
+
+            <main class="content container" >
+                <div class="post">
+  <div class="info">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/2024/wu_simple_encryptor/">Write-Up HTB Challenge Simple Encryptor</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2024-09-24T16:06:52&#43;0200" class="post-date">
+        September 24, 2024
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-HackTheBox">
+        <a href="//localhost:1313/tags/hackthebox">HackTheBox</a>
+      </li>
+      
+      <li class="tag-WriteUp">
+        <a href="//localhost:1313/tags/writeup">WriteUp</a>
+      </li>
+      
+      <li class="tag-Reverse">
+        <a href="//localhost:1313/tags/reverse">Reverse</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+  <p>Simple Encryptor is a reverse challenge created by Leeky on HackTheBox. The difficulty is very easy.</p>
+<p>Challenge description:
+<code>On our regular checkups of our secret flag storage server we found out that we were hit by ransomware! The original flag data is nowhere to be found, but luckily we not only have the encrypted file but also the encryption program itself.</code></p>
+<p>Once the zip archive has been unpacked, we&rsquo;re left with two files: a binary file named encrypt and the encrypted flag. Using the file command, we can look at the characteristics of the binary file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ file encrypt 
+</span></span><span style="display:flex;"><span>encrypt: ELF 64-bit LSB pie executable, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID<span style="color:#f92672">[</span>sha1<span style="color:#f92672">]=</span>0bddc0a794eca6f6e2e9dac0b6190b62f07c4c75, <span style="color:#66d9ef">for</span> GNU/Linux 3.2.0, not stripped
+</span></span></code></pre></div><p>Okey it&rsquo;s an ELF-64 binary not stripped. Using Ghidra&rsquo;s decompiler, the code is pretty straightforward to understand. Below is an image of the annotated decompiled file.</p>
+<p><img src="/images/posts/WU_Simple_Encryptor/decompiled.png" alt="Decompiled code"></p>
+<p>The program starts by opening the flag file, obtaining its size and allocating a buffer on the heap. The program will copy the content of the flag file into it. Then it initialises a seed to passed at the <code>srand</code> function.</p>
+<p>The encryption process follows. In a loop that iterates over each byte of the buffer, the program first generates a random number and XORs it with the current byte at position <code>i</code>. It then generates a second random number, but this time only uses the lower three bits (<code>random_n2 &amp; 7</code>), which results in a value between 0 and 7. Finally, it applies a bitwise left rotation to the XORed byte using this second random value.</p>
+<p>Then it opens a new file and writes first the seed, then the encrypted flag.</p>
+<p>Writing the function to decrypt is simple. We just have to repeat this operation but in the inverse order. We will first make right rotation with the second random number and then xor it with the first random number.</p>
+<p>I wrote this C code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;time.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ROTR(X,N) ((N) == 0 ? (X) : (((X) &gt;&gt; (N)) | ((X) &lt;&lt; (8 * sizeof(X) - (N)))))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  FILE <span style="color:#f92672">*</span>fd_encrypted <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(argv[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fseek</span>(fd_encrypted, <span style="color:#ae81ff">0</span>, SEEK_END);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">long</span> len_encrypted <span style="color:#f92672">=</span> <span style="color:#a6e22e">ftell</span>(fd_encrypted);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fseek</span>(fd_encrypted, <span style="color:#ae81ff">0</span>, SEEK_SET);
+</span></span><span style="display:flex;"><span>  len_encrypted <span style="color:#f92672">-=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>buffer <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>((<span style="color:#66d9ef">size_t</span>)(len_encrypted <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> seed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fread</span>(<span style="color:#f92672">&amp;</span>seed, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>), <span style="color:#ae81ff">1</span>, fd_encrypted);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fread</span>(buffer, len_encrypted, <span style="color:#ae81ff">1</span>, fd_encrypted);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">srand</span>(seed);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len_encrypted; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> rand_n1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> rand_n2 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span>)<span style="color:#a6e22e">rand</span>() <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>    buffer[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">ROTR</span>(buffer[i], rand_n2);
+</span></span><span style="display:flex;"><span>    buffer[i] <span style="color:#f92672">=</span> buffer[i] <span style="color:#f92672">^</span> rand_n1;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  buffer[len_encrypted] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Flag = %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buffer);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  FILE <span style="color:#f92672">*</span>fd_decrypted <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(argv[<span style="color:#ae81ff">2</span>], <span style="color:#e6db74">&#34;w&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fwrite</span>(buffer, len_encrypted, <span style="color:#ae81ff">1</span>, fd_decrypted);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fclose</span>(fd_encrypted);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fclose</span>(fd_decrypted);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">free</span>(buffer);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  
+  <hr>
+<div class="footer">
+    
+	    
+	    
+            <div class="next-post">
+                <a href="//localhost:1313/posts/2024/wu_fcsc2019_not_so_fat/?ref=footer"><span style="font-weight:bold;">Next »</span><br>Write-Up FCSC2019 Not So Fat</a>
+            </div>
+        
+    
+</div>
+
+  
+</div>
+            </main>
+            
+  
+
+        </div>
+    </body>
+</html>
